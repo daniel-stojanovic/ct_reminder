@@ -5,10 +5,9 @@ app.debug=True
 
 @app.route('/')
 def index():
-    reminder_rattlesnake = "python /Users/danny/PycharmProjects/test_webapp/app.py"
+    reminder_rattlesnake = "python /Users/danny/PycharmProjects/Reminderrattlesnake/remind_via_xing.py"
     os.system(reminder_rattlesnake)
     return "Running reminders now..."
-
 
 if __name__ == '__main__':
     app.run()
