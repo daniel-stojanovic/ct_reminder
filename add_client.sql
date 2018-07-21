@@ -1,3 +1,3 @@
-INSERT INTO clients(full_name)
-VALUES ('{company_name}')
+INSERT INTO clients(internal_name)
+VALUES (%(internal_name)s)
 RETURNING id;

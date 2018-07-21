@@ -1,2 +1,7 @@
-Flask==0.12.2
+Flask
 Werkzeug<0.13.0,>=0.12.0
+psycopg2==2.7.4
+erecruiterhelper==0.1
+xingbot
+urllib3
+requests

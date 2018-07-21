@@ -1,4 +1,4 @@
-from flask import Flask, request
+'''from flask import Flask, request
 from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
@@ -40,3 +40,17 @@ def index():
 
 if __name__ == '__main__':
     app.run(port='5002')
+'''
+
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def display():
+
+    test ="Looks like it works!" + "yay"
+    return test
+
+if __name__=='__main__':
+    app.run(debug=True, host = '192.168.0.5', port=3134)
