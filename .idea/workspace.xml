@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42276a57-8746-4eaf-bcd2-8303d2e08609" name="Default" comment="added .gitignore">
-      <change beforePath="" afterPath="$PROJECT_DIR$/add_entry_from_instance.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/assign_candidate_to_job.sql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/basic_actions.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/recipients.csv" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/test_webapp.iml" afterPath="$PROJECT_DIR$/.idea/test_webapp.iml" />
+    <list default="true" id="42276a57-8746-4eaf-bcd2-8303d2e08609" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/add_client.sql" afterPath="$PROJECT_DIR$/add_client.sql" />
-      <change beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
-      <change beforePath="$PROJECT_DIR$/classes.py" afterPath="$PROJECT_DIR$/classes.py" />
-      <change beforePath="$PROJECT_DIR$/db_connector.py" afterPath="$PROJECT_DIR$/db_connector.py" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change beforePath="$PROJECT_DIR$/setup.sql" afterPath="$PROJECT_DIR$/setup.sql" />
-      <change beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,16 +56,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="add_client.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_client.sql">
           <provider selected="true" editor-type-id="text-editor">
@@ -110,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="classes.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="classes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-40">
@@ -118,6 +96,16 @@
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,7 +177,6 @@
         <option value="$PROJECT_DIR$/create_job.sql" />
         <option value="$PROJECT_DIR$/test.sql" />
         <option value="$PROJECT_DIR$/client.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/add_entry_from_instance.sql" />
         <option value="$PROJECT_DIR$/add_client.sql" />
         <option value="$PROJECT_DIR$/test.py" />
@@ -203,6 +190,7 @@
         <option value="$PROJECT_DIR$/db_connector.py" />
         <option value="$PROJECT_DIR$/setup.sql" />
         <option value="$PROJECT_DIR$/classes.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -405,7 +393,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529158051759</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="various updates to the last version">
+      <created>1532170120769</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1532170120772</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -451,7 +446,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added functionality to connect to aws postgres db and set up major classes" />
     <MESSAGE value="added .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="added .gitignore" />
+    <MESSAGE value="various updates to the last version" />
+    <option name="LAST_COMMIT_MESSAGE" value="various updates to the last version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,13 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -763,6 +752,14 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
