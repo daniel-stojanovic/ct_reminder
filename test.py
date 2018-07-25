@@ -1,4 +1,11 @@
 import psycopg2
+import requests
+
+r = requests.put('http://httpbin.org/put', data = {'key':'value'})
+
+
+
+
 class PostgreSQL:
     def __init__(self):
         # Define our connection string

@@ -1,61 +1,72 @@
 CREATE TABLE jobs(
-    id              serial,
-    job_title  text                         NOT NULL,
-    er_id           int                     UNIQUE,
-    client_id       int                     NOT NULL,
-    recruiter_id    int,
-    creation_date   timestamp               NOT NULL    default CURRENT_TIMESTAMP,
-    briefing_on     timestamp,
-    status          text,
-    min_salary      int,
-    max_salary      int,
-    exp_salary      int,
-    dayzee_link     text
+    id              SERIAL,
+    job_title  TEXT                         NOT NULL,
+    er_id           INTEGER                     UNIQUE,
+    client_id       INTEGER                     NOT NULL,
+    recruiter_id    INTEGER,
+    creation_date   TIMESTAMP               NOT NULL    DEFAULT CURRENT_TIMESTAMP,
+    briefing_on     TIMESTAMP,
+    status          TEXT,
+    min_salary      INTEGER,
+    max_salary      INTEGER,
+    exp_salary      INTEGER,
+    dayzee_link     TEXT
 );
 
 CREATE TABLE staff(
-    number          serial,
-    first_name      text                    NOT NULL,
-    last_name       text                    NOT NULL,
-    position        text,
-    created_on      timestamp                       NOT NULL    default CURRENT_TIMESTAMP
+    number          SERIAL,
+    first_name      TEXT                    NOT NULL,
+    last_name       TEXT                    NOT NULL,
+    position        TEXT,
+    created_on      TIMESTAMP                       NOT NULL    DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE candidates(
-    id              serial,
-    er_id           int                             NOT NULL,
-    first_name      text                    NOT NULL,
-    last_name       text                    NOT NULL,
-    phone_number    text,
-    email           text,
+    id              SERIAL,
+    er_id           INTEGER                             NOT NULL,
+    first_name      TEXT                    NOT NULL,
+    last_name       TEXT                    NOT NULL,
+    phone_number    TEXT,
+    email           TEXT,
     dob             date,
-    xing_link       text,
-    linkedin_link   text,
-    added_on        timestamp               NOT NULL    default CURRENT_TIMESTAMP,
-    approachable    boolean                             default TRUE,
-    referrer        text
+    xing_link       TEXT,
+    linkedin_link   TEXT,
+    added_on        TIMESTAMP               NOT NULL    DEFAULT CURRENT_TIMESTAMP,
+    approachable    BOOLEAN                             DEFAULT TRUE,
+    referrer        TEXT
 );
 
 CREATE TABLE applications(
-    id                          serial,
-    candidate_id                int         NOT NULL,
-    job_id                      int         NOT NULL,
-    status                      text        NOT NULL,
-    added_on                    timestamp   NOT NULL    default CURRENT_TIMESTAMP,
-    contacted_on                timestamp,
-    contact_version             text,
-    replied_on                  timestamp,
-    interview_on                timestamp,
-    contract_negotiations_on    timestamp
+    id                          SERIAL,
+    candidate_id                INTEGER         NOT NULL,
+    job_id                      INTEGER         NOT NULL,
+    status                      TEXT        NOT NULL,
+    added_on                    TIMESTAMP   NOT NULL    DEFAULT CURRENT_TIMESTAMP,
+    contacted_on                TIMESTAMP,
+    contact_version             TEXT,
+    replied_on                  TIMESTAMP,
+    INTEGERerview_on                TIMESTAMP,
+    contract_negotiations_on    TIMESTAMP
 );
 
 CREATE TABLE clients(
-    id                          serial,
-    internal_name               text        NOT NULL,
-    full_name                   text,
-    street                      text,
-    street_number               text,
-    zip                         int,
-    city                        text,
-    main_contact                text
+    id                          SERIAL,
+    name                        TEXT        NOT NULL,
+    street                      TEXT,
+    street_number               TEXT,
+    zip                         INTEGER,
+    city                        TEXT,
+    main_contact                TEXT
+);
+
+CREATE TABLE matches(
+    id                          SERIAL,
+    candidate_id                INTEGER,
+    job_id                      INTEGER,
+    er_id                       BIGINT,
+    creation_date               TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
+    last_status_change          TIMESTAMP,
+    rating                      CHAR(1),
+    candidate_decline_reason    TEXT,
+    client_decline_reason       TEXT
 );

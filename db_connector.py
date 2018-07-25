@@ -6,8 +6,9 @@ from psycopg2.extras import RealDictCursor
 from psycopg2.extras import NamedTupleCursor
 import time
 
-
 er_id=3142
+
+
 class PostgreSQL:
     def __init__(self):
         # Define our connection string
@@ -17,21 +18,16 @@ class PostgreSQL:
         self.password = '3n4ctUS!'
         self.conn_string = "host='{host}' dbname='{db}' user='{user}' password='{password}'"
 
-
-
     def connect_to_db(self, conn_string="", host_adress="", db="", username="", password="", cursor=""):
         #depending on what information is provided, connect to db
-        connection_string = self.conn_string if conn_string is "" else conn_string
-        host = self.host if host_adress is "" else host_adress
-        user = self.user if username is "" else username
-        database = self.db if db is "" else db
-        pw = self.password if password is "" else password
+        connection_string = conn_string if conn_string else self.conn_string
+        host = host_adress if host_adress else self.host
+        user = username if username else self.user
+        database = db if db else self.db
+        pw = password if password else self.password
         connection_string = connection_string.format(host = host, db = database, user = user, password = pw)
-
-
         # get a connection, if a connect cannot be made an exception will be raised here
         self.connection = psycopg2.connect(connection_string)
-
         # conn.cursor will return a cursor object, you can use this cursor to perform queries
         if cursor == "namedtuple":
             self.cursor = self.connection.cursor(cursor_factory=NamedTupleCursor)

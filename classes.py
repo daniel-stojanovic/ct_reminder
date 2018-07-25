@@ -72,13 +72,13 @@ class BaseClass:
     def __repr__(self):
         """ Default value to return when calling the instance depending on object type """
         if self.table == "clients":
-            rep = self.internal_name
+            rep = self.name
         elif self.table == "jobs":
             rep = self.job_title
         elif self.table == "candidates":
             rep = "{} {}".format(self.first_name, self.last_name)
         else:
-            return("Error!")
+            raise AttributeError("Could not assign instance name; check 'self.table'")
         return rep
 
     def commit(self):
@@ -87,7 +87,7 @@ class BaseClass:
         paired with the instance attributes and uploaded as changes to the entry (or as new entry if no id exists)
         :return: None
         """
-        print("Committing changes to '{}'".format(self.table))    # TODO: consider adding a field "last_changed"
+        print("Committing changes to '{}'".format(self))    # TODO: consider adding a field "last_changed"
         keys = self.get_attributes(self.table)                      # retrieve relevant keys from DB, but
         keys.remove('id')                                           # remove 'id' and 'added_on' as they are being
         keys.remove('creation_date')                                # dynamically generated in the DB;
@@ -107,22 +107,19 @@ class BaseClass:
             query = "INSERT INTO {} ({}) VALUES ({}) RETURNING id;".format(self.table, keystring, placeholders)
             self.id = self.db.execute_query(query, **k_v_string)[0][0]
             print("Entry successfully added.")
-            return self.id
 
 
 class Client(BaseClass):
-    def __init__(self, id=None, internal_name="", **kwargs):                        # new client must must have
-        self.table = "clients"
-                                                                                    # internal_name; only necessary
-        if not id and not internal_name:                                            # if no id is provided (with ID,
+    def __init__(self, id=None, name="", **kwargs):                        # new client must must have
+        self.table = "clients"                                                      # internal_name; only necessary
+        if not id and not name:                                            # if no id is provided (with ID,
             raise AttributeError("No internal name provided for new client!")       # internal_name comes from DB)
-        BaseClass.__init__(self, id, internal_name=internal_name, **kwargs)
+        BaseClass.__init__(self, id, name=name, **kwargs)
 
 
 class Job(BaseClass):
     def __init__(self, id=None, job_title="", client_id="", **kwargs):
         self.table = "jobs"
-                                                                                    #
         if not id:                                                                  #
             self.status = 'new'                                                     #
             if not job_title:                                                       # job_title and client_id must be
@@ -130,6 +127,12 @@ class Job(BaseClass):
             if not client_id:                                                       # will be set to 'new'
                 raise AttributeError("No client ID provided for new job!")
         BaseClass.__init__(self, id, job_title=job_title, client_id=client_id, **kwargs)
+
+
+class Match(BaseClass):
+    def __init__(self, id=None, **kwargs):
+        self.table = "matches"
+        BaseClass.__init__(self, id, **kwargs)
 
 
 class Candidate(BaseClass):
@@ -170,8 +173,8 @@ class Candidate(BaseClass):
 
 
 if __name__ =="__main__":
-    job = Job(job_title="Senior IT Recruiter", client_id="33", dayzee_link="www.test.de")
-    job.commit()
-    #c = Client()
-    print job
+    #job = Job(job_title="Senior IT Recruiter", client_id="33", dayzee_link="www.test.de")
+    #job.commit()
+    c = Client(name="test")
+    c.commit()
 
